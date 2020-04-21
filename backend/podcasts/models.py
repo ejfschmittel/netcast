@@ -31,7 +31,7 @@ class Podcast(models.Model):
 
     categories = models.ManyToManyField(Category)
     personalities = models.ManyToManyField(Personality)
-    creator = models.ForeignKey(User, on_delete=models.SET_NULL)
+    creator = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
       
 
     class Meta:

@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Category (models.Model):
     name = models.CharField( max_length=16)
-    slug = models.models.SlugField(max_length=16)
+    slug = models.SlugField(max_length=16)
     
 
     class Meta:
