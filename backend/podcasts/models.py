@@ -29,8 +29,8 @@ class Podcast(models.Model):
     spotify_page = models.URLField( max_length=127, blank=True, null=False)
     
 
-    categories = models.ManyToManyField(Category)
-    personalities = models.ManyToManyField(Personality)
+    categories = models.ManyToManyField(Category, blank=True)
+    hosts = models.ManyToManyField(Personality, blank=True)
     creator = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
       
 

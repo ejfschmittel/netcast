@@ -1,0 +1,91 @@
+.podcast-list{
+    display: grid;
+    gap: 1rem;
+    padding: 1rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+
+    
+}
+
+.podcast-item{
+  
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 1rem;
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+
+    box-shadow: 0 .2rem .5rem rgba(0,0,0,.1), 0 .4rem 1rem rgba(0,0,0,.05);
+ 
+
+    &__description{
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(255,255,255,.5);
+
+    }
+
+
+    img{
+        object-fit: cover;
+        width: 100%;
+    }
+
+    &__info{
+       
+        background: #fff;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        transition: all .3s;
+
+       
+
+        h4{
+            text-align: center;
+            height: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        p{
+            position: absolute;
+            background:#fff;
+            height: 5rem;
+            padding: 0 1rem;
+        }
+
+      
+    }
+
+    &__categories{
+        position: absolute;
+        top: .5rem;
+        left: .5rem;
+        
+        ul{
+            display: flex;
+            list-style: none;
+        }
+        li{
+            margin: 0 .2rem;
+        }
+
+        a{
+            color: #fff;
+            font-size: 1.2rem;
+        }
+    }
+
+    &:hover &__info{
+       transform: translateY(-5rem);
+    }
+}

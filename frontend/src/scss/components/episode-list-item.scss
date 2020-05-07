@@ -1,0 +1,32 @@
+
+.episode-list{
+    display: grid;
+    gap: 1rem;
+    padding: 1rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+}
+
+.episode-list-item{
+
+    background: #fff;
+
+    &__img-container{
+
+        img{
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    &__title{
+
+    }
+
+    &__personalities{
+
+    }
+
+    &__tags{
+
+    }
+}

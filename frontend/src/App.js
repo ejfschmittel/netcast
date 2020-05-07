@@ -1,24 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
+
+
+import PodcastDetailPage from "./pages/podcastDetailPage";
+import PodcastSearchPage from "./pages/SeachPodcastsPage";
+import EpisodeDetailPage from "./pages/episodeDetailPage";
+
+import Header from "./components/header"
+
+import "./scss/main.scss";
+
+
+const Test = () => (
+  <div>
+  <h1>Test</h1>
+
+  </div>
+)
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+
+      
+      
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/" component={Test} exact={true} />
+          <Route path="/podcasts/" component={PodcastSearchPage} exact/>
+          <Route path="/podcasts/:podcastid/episode/:episodeid" component={EpisodeDetailPage}/>
+          <Route path="/podcasts/:podcastid" component={PodcastDetailPage}/>
+          
+        </Switch>
+      </Router>
+
     </div>
   );
 }
